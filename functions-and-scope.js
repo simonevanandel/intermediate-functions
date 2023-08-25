@@ -14,6 +14,16 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan bijhouden?
 // Log het antwoord in de terminal.
 
+// let amountOfCumLaude = 0;
+//
+// for (let i = 0; i < grades.length; i++) {
+//     if (grades[i] >= 8) {
+//         amountOfCumLaude = amountOfCumLaude + 1;
+//     }
+// }
+//
+// console.log(amountOfCumLaude);
+
 // ---- Verwachte uitkomst: 6
 
 
@@ -27,8 +37,22 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
+function cumLaude(grades) {
+    let amountOfCumLaude = 0;
 
+    for (let i = 0; i < grades.length; i++) {
+        if (grades[i] >= 8) {
+            amountOfCumLaude = amountOfCumLaude + 1;
+        }
+    }
 
+    return amountOfCumLaude;
+}
+
+const checkGrades = cumLaude(grades);
+const array1 = cumLaude([6, 4, 5]);
+const array2 = cumLaude([8, 9, 4, 6, 10]);
+console.log(array2);
 
 /* Opdracht  2: Gemiddeld cijfer */
 
@@ -41,7 +65,14 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 6.642857142857143
-
+// let total = 0;
+//
+// for (let i = 0; i < grades.length; i++) {
+//     // tel telkens de waarde van de entry uit de array bij wat we daarvoor al hebben opgeteld
+//     total = total + grades[i];
+// }
+//
+// console.log(total / grades.length);
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
@@ -53,6 +84,14 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // averageGrade([6, 4, 5]) geeft xxxx
 // averageGrade([8, 9, 4, 6, 10]) geeft xxxx
 
+let total = 0;
+
+for (let i = 0; i < grades.length; i++) {
+    // tel telkens de waarde van de entry uit de array bij wat we daarvoor al hebben opgeteld
+    total = total + grades[i];
+}
+
+console.log(total / grades.length);
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
